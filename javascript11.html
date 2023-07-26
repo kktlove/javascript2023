@@ -11,6 +11,9 @@
             <input type="text" id="display">
             <table>
                 <tr>
+                    <td colspan="4"><button id="clear" onclick="cl()">CLEAR</button></td>
+                </tr>
+                <tr>
                     <td><button id="btn7" onclick="cal(7)">7</button></td>
                     <td><button id="btn8" onclick="cal(8)">8</button></td>
                     <td><button id="btn9" onclick="cal(9)">9</button></td>
@@ -42,8 +45,12 @@
     function cal(btn){
         display.value = display.value + btn;
     }    
-    function rt(){ //eval()
+    function rt(){ //eval() : 문자열로 구성된 계산식을 실제 계산가능한 구조로 변경
+        display.value = eval(display.value);
+    }
+    function cl(){ //초기화  
         display.value = "";
+        display.focus();
     }
     </script>
 </body>
